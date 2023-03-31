@@ -2,12 +2,12 @@ package com.demoqa;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.Keys;
 
 import java.io.File;
 
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class DraftTests extends TestBase {
 
@@ -74,5 +74,37 @@ public class DraftTests extends TestBase {
         open("/automation-practice-form");
 
         $("#subjectsInput").setValue("Math").pressEnter();
+    }
+
+    @Test
+    void someTest5() {
+        open("/automation-practice-form");
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
+
+
+        $("#subjectsInput").setValue("Math").pressEnter();
+
+
+        $("#name").sendKeys("B", Keys.ENTER);
+    }
+
+    @Test
+    void someTest6() {
+        /*
+        Почему, когда мы выбираем год из списка метод selectOption работает: $(".react-datepicker__year-select").selectOption("1988");
+        а когда выбираем штат из списка, то он не работает:
+        $("#state").selectOption("Uttar Pradesh");
+         */
+        open("/automation-practice-form");
+        $(".react-datepicker__year-select").selectOption("1988");
+        $("#state").selectOption("Uttar Pradesh");
+    }
+
+    @Test
+    void someTest7() {
+        $("[name=q]").click();
+        $$("[name=q]").get(0).click();
+        $("[name=q]", 0).click();
     }
 }
