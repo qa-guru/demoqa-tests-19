@@ -1,7 +1,6 @@
 package examples;
 
-import com.codeborne.selenide.Configuration;
-import com.demoqa.TestBase;
+import com.demoqa.tests.TestBase;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 
