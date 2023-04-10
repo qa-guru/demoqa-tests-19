@@ -9,6 +9,7 @@ import java.io.File;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+import static java.lang.String.format;
 
 public class DraftTests extends TestBase {
 
@@ -121,6 +122,34 @@ public class DraftTests extends TestBase {
 //        А если где-то мы находим коллекцию, то будет аналогичный список, но с SelenideElementS?
 
         ElementsCollection genderInputs = $$(".asdfa");
+
+    }
+
+    @Test
+    void someTes9() {
+//        $(".react-datepicker__day--0" + day + ":not(.react-datepicker__day--outside-month)").click();
+
+//        String dayPickerLocator = format(".react-datepicker__day--0%s:not(.react-datepicker__day--outside-month)", day);
+//        $(dayPickerLocator).click();
+        // todo google it String.format
+
+        String a = "aaaa";
+        String b = "bbbb" + a + "bbbb";
+        /// bbbbaaaabbbb
+
+//        String c = String.format("bbbb%sbbbb", a);
+        String c = format("bbbb%sbbbb", a);
+        /// bbbbaaaabbbb
+
+//////////////////////
+
+        String d = "dddd";
+        String e = "eeee";
+        String f = "ffff" + d + "ffff" + e + "ffff";
+
+//        String c = String.format("bbbb%sbbbb", a);
+        String i = format("ffff%sffff%sffff", d, e);
+        /// bbbbaaaabbbb
 
     }
 }

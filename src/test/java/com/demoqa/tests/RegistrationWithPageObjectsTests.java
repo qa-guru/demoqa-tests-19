@@ -19,11 +19,6 @@ public class RegistrationWithPageObjectsTests extends TestBase {
                         .setNumber("1234567890")
                         .setBirthDate("30", "July", "2008");
 
-        $("#dateOfBirthInput").click();
-        $(".react-datepicker__month-select").selectOption("July");
-        $(".react-datepicker__year-select").selectOption("2008");
-        $(".react-datepicker__day--030:not(.react-datepicker__day--outside-month)").click();
-
         $("#subjectsInput").setValue("Math").pressEnter();
         $("#hobbiesWrapper").$(byText("Sports")).click();
         $("#uploadPicture").uploadFromClasspath("img/1.png");
@@ -34,9 +29,9 @@ public class RegistrationWithPageObjectsTests extends TestBase {
         $("#stateCity-wrapper").$(byText("Delhi")).click();
         $("#submit").click();
 
-        $(".modal-dialog").should(appear);
-        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-        $(".table-responsive").shouldHave(text("Alex"), text("Egorov"),
-                text("alex@egorov.com"), text("1234567890"));
+        registrationPage.verifyRegistrationResultsModalAppears()
+                .verifyResult("Full name", "Alex Egorov")
+                .verifyResult("Email", "alex@egorov.com")
+                .verifyResult("Phone", "1234567890");
     }
 }
