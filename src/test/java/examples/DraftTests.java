@@ -1,5 +1,6 @@
 package examples;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.demoqa.tests.TestBase;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
@@ -106,5 +107,20 @@ public class DraftTests extends TestBase {
         $("[name=q]").click();
         $$("[name=q]").get(0).click();
         $("[name=q]", 0).click();
+    }
+
+
+    @Test
+    void someTest8() {
+//        Вопрос по этой записи:
+//        SelenideElement formHeaderText = $(".practice-form-wrapper"),
+//                firstNameInput = $("#firstName"),
+//                lastNameInput = $("#lastName"),
+//                userEmailInput = $("#userEmail"),
+//                gender = $("#genterWrapper");
+//        А если где-то мы находим коллекцию, то будет аналогичный список, но с SelenideElementS?
+
+        ElementsCollection genderInputs = $$(".asdfa");
+
     }
 }

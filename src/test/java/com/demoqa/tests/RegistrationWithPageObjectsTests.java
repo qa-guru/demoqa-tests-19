@@ -1,6 +1,5 @@
 package com.demoqa.tests;
 
-import com.demoqa.pages.RegistrationPage;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.appear;
@@ -16,13 +15,15 @@ public class RegistrationWithPageObjectsTests extends TestBase {
                         .setFirstName("Alex")
                         .setLastName("Egorov")
                         .setUserEmail("alex@egorov.com")
-                        .setGender("Other");
+                        .setGender("Other")
+                        .setNumber("1234567890")
+                        .setBirthDate("30", "July", "2008");
 
-        $("#userNumber").setValue("1234567890");
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOption("July");
         $(".react-datepicker__year-select").selectOption("2008");
         $(".react-datepicker__day--030:not(.react-datepicker__day--outside-month)").click();
+
         $("#subjectsInput").setValue("Math").pressEnter();
         $("#hobbiesWrapper").$(byText("Sports")).click();
         $("#uploadPicture").uploadFromClasspath("img/1.png");
