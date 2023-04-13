@@ -11,7 +11,6 @@ public class TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
     LoginPage loginPage = new LoginPage();
 
-
     @BeforeAll
     static void beforeAll() {
         Configuration.baseUrl = "https://demoqa.com";
