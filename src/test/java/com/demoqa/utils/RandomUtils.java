@@ -1,5 +1,7 @@
 package com.demoqa.utils;
 
+import com.github.javafaker.Faker;
+
 import java.security.SecureRandom;
 import java.util.UUID;
 import java.util.concurrent.ThreadLocalRandom;
@@ -58,6 +60,10 @@ public class RandomUtils {
 
     public static String getRandomGender() {
        return getRandomItemFromArray(genders);
+    }
+
+    public static String getRandomFirstName() {
+       return new Faker().name().firstName();
     }
 
 }
