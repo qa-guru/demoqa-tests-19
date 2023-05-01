@@ -1,14 +1,18 @@
 package examples;
 
 import com.codeborne.selenide.ElementsCollection;
+import com.demoqa.pages.components.ResultsModal;
 import com.demoqa.tests.TestBase;
+import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 
 import java.io.File;
 
+import static com.codeborne.selenide.Browsers.CHROME;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+import static com.demoqa.utils.RandomUtils.getRandomInt;
 import static java.lang.String.format;
 
 public class DraftTests extends TestBase {
@@ -152,4 +156,57 @@ public class DraftTests extends TestBase {
         /// bbbbaaaabbbb
 
     }
+    @Test
+    void someTes10() {
+//        Подскажите пожалуйста про генерацию изображений (нашла для версии 2.0.1 и выше),
+//        есть ли подобная возможность для той версии, что указана на занятии?
+//        Faker faker = new Faker();
+//        faker.image.animals(width?: number = 640, height?: number = 480, randomize?: boolean = false): string
+//        faker.image.animals() // => "https://loremflickr.com/640/480/animals"
+//        faker.image.animals() // 'https://loremflickr.com/640/480/animals'
+//        faker.image.animals(1234, 2345) // 'https://loremflickr.com/1234/2345/animals'
+//        faker.image.animals(1234, 2345, true) // 'https://loremflickr.com/1234/2345/animals?lock=56789'
+
+
+    }
+
+    @Test
+    void someTes11() {
+//        Я вчера спрашивала про «RegistrationResultsModal можно не заворачивать в RegistrationPage,
+//        а в тесте использовать напрямую.» А можно пожалуйста визуально пример, как это делается?
+        ResultsModal resultsModal = new ResultsModal();
+        resultsModal.verifyResult("", "");
+
+    }
+
+    static int i = getRandomInt(0, 99);
+
+    ///////////////////
+    @Test
+    void someTes102() {
+//        t
+
+    }
+
+    @Test
+    void someTes103() {
+//        t
+
+
+    }
+//////////////////////////////
+
+
+
+
+
+
+    @Test
+    void someTes100() {
+//        t
+
+
+    }
+
+
 }
