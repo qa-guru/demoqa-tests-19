@@ -9,9 +9,8 @@ repositories {
 
 def selenideVersion = "6.13.0",
         allureVersion = "2.21.0",
-        jUnitVersion = "5.9.3"
+        jUnitVersion = "5.9.3",
         slf4jVersion = "2.0.7"
-
 
 allure {
     report {
