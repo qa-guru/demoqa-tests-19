@@ -16,6 +16,21 @@ dependencies {
     )
 }
 
+tasks.withType(Test) {
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
+}
+
 test {
     useJUnitPlatform()
+}
+
+task simple_test(type: Test) {
+    useJUnitPlatform{
+        includeTags("simple")
+    }
 }
