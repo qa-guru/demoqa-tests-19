@@ -14,6 +14,7 @@ public class RegistrationRemoteTests extends RemoteTestBase {
     @Test
     @Tag("remote")
     void successfulRegistrationTest() {
+
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
         executeJavaScript("$('#fixedban').remove()");
