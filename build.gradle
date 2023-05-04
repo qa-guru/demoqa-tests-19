@@ -37,6 +37,7 @@ dependencies {
 }
 
 tasks.withType(Test) {
+    useJUnitPlatform()
     systemProperties(System.getProperties())
 
     testLogging {
@@ -45,10 +46,6 @@ tasks.withType(Test) {
             exceptionFormat "short"
         }
     }
-}
-
-test {
-    useJUnitPlatform()
 }
 
 task simple_test(type: Test) {
